@@ -1,0 +1,4 @@
+export QT_STYLE_OVERRIDE=kvantum
+
+# Disable AWS CLI v2 pager
+export AWS_PAGER=''
