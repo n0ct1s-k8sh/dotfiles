@@ -14,6 +14,10 @@ Perms are `0644`.
 
 Before deploying this config, you need to install these things:
 
+## Font
+
+This requires the same `MesloLGS NF` font patched for [powerlevel10k OhMyZsh Theme](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k). Check out the [OhMyZSH README file](../OhMyZSH/README.md) to install it.
+
 ### Themes
 
 - Color Theme &rarr; [GitHub](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme).
