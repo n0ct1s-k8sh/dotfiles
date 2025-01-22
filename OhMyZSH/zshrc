@@ -130,3 +130,6 @@ export PATH=$HOME/go/bin:$PATH
 
 # History config
 setopt hist_ignore_all_dups
+
+# Aliases
+alias vim='nvim'
