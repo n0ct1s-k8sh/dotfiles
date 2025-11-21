@@ -108,7 +108,7 @@ deploy_dotfiles() {
     
     if [ "$OS" == "linux" ]; then
         mkdir -p "$HOME/.config/Code/User"
-        cp .config/Code/settings.json "$HOME/.config/Code/User/settings.json"
+        cp .config/Code/User/settings.json "$HOME/.config/Code/User/settings.json"
     elif [ "$OS" == "macos" ]; then
         if [ ! -d "$HOME/Library/Application Support/Code" ]; then
             echo "Error: VS Code directory not found in macOS."
