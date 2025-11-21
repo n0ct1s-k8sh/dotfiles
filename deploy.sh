@@ -19,6 +19,8 @@ detect_os() {
 
 confirm_deployment() {
     echo "This will deploy dotfiles to your home directory."
+    echo "Make sure that this script is called from ZSH."
+    echo "All required dependencies must be installed."
     echo "Existing files will be overwritten."
     read -p "Do you want to continue? (y/N): " -n 1 -r
     echo -e "\n"
