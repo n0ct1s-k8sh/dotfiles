@@ -95,17 +95,27 @@ deploy_dotfiles() {
     echo "Deploying dotfiles"
     
     cp .zshrc "$HOME/.zshrc"
+    
+    mkdir -p "$HOME/.oh-my-zsh"
     cp .oh-my-zsh/aliases.zsh "$HOME/.oh-my-zsh/aliases.zsh"
     
     if [ "$OS" == "linux" ]; then
         cp .profile "$HOME/.profile"
     fi
     
+    mkdir -p "$HOME/.config"
     cp -r .config/nvim "$HOME/.config/nvim"
     
     if [ "$OS" == "linux" ]; then
+        mkdir -p "$HOME/.config/Code/User"
         cp .config/Code/settings.json "$HOME/.config/Code/User/settings.json"
     elif [ "$OS" == "macos" ]; then
+        if [ ! -d "$HOME/Library/Application Support/Code" ]; then
+            echo "Error: VS Code directory not found in macOS."
+            echo "Please install VS Code first."
+            exit 1
+        fi
+        mkdir -p "$HOME/Library/Application Support/Code/User"
         cp .config/Code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
     fi
 }
