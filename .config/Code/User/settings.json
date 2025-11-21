@@ -1,0 +1,12 @@
+{
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "window.autoDetectColorScheme": true,
+    "terminal.integrated.allowChords": false,
+    "scm.defaultViewMode": "tree",
+    "editor.fontFamily": "'MesloLGM Nerd Font', 'monospace', monospace",
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.stickyScroll.enabled": false,
+    "dev.containers.dockerCredentialHelper": false,
+    "git.suggestSmartCommit": false
+}
