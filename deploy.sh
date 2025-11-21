@@ -120,7 +120,7 @@ deploy_dotfiles() {
 
 main() {
     echo "========================================="
-    echo "  Dotfiles install"
+    echo "  Dotfiles deployment"
     echo "========================================="
     echo ""
     
@@ -131,7 +131,7 @@ main() {
     install_neovim_plugins
     install_vscode_extensions
     
-    echo -e "\nDotfiles installed successfully"
+    echo "Dotfiles installed successfully"
     echo "Restart your terminal or run 'exec zsh'"
 }
 
