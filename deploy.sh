@@ -10,20 +10,18 @@ detect_os() {
     esac
     
     if [ "$OS" == "unknown" ]; then
-        echo "Unsupported operating system: $(uname -s)"
+        echo "Unsupported operating system"
         exit 1
     fi
     
-    echo "OS detected: $OS"
+    echo -e "OS detected: ${OS}\n"
 }
 
 confirm_deployment() {
-    echo ""
     echo "This will deploy dotfiles to your home directory."
     echo "Existing files will be overwritten."
-    echo ""
     read -p "Do you want to continue? (y/N): " -n 1 -r
-    echo ""
+    echo -e "\n"
     
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         echo "Deployment cancelled."
@@ -32,14 +30,14 @@ confirm_deployment() {
 }
 
 download_ohmyposh_config() {
-    echo "Downloading Oh My Posh 'Atomic' config"
+    echo -e "Downloading Oh My Posh 'Atomic' config"
     
     oh-my-posh config export \
         --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/atomic.omp.json \
         --output "$HOME/.oh-my-posh.yaml"
     
     if [ $? -eq 0 ]; then
-        echo "Oh My Posh configured successfully"
+        echo -e "Oh My Posh configured successfully\n"
     else
         echo "Failed to configure Oh My Posh config"
         return 1
@@ -56,7 +54,7 @@ install_neovim_plugins() {
     
     nvim --headless +PlugInstall +qa
     
-    echo "Neovim plugins installed successfully"
+    echo -e "Neovim plugins installed successfully\n"
 }
 
 install_vscode_extensions() {
@@ -88,7 +86,7 @@ install_vscode_extensions() {
         code --install-extension "$extension" --force
     done
     
-    echo "VS Code extensions installed successfully"
+    echo -e "VS Code extensions installed successfully\n"
 }
 
 deploy_dotfiles() {
@@ -133,8 +131,7 @@ main() {
     install_neovim_plugins
     install_vscode_extensions
     
-    echo ""
-    echo "Dotfiles installed successfully"
+    echo -e "\nDotfiles installed successfully"
     echo "Restart your terminal or run 'exec zsh'"
 }
 
