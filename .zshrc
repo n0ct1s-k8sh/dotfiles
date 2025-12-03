@@ -2,7 +2,6 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=$HOME/go/bin:$PATH				# Golang binaries
 
 export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.yaml)"
 
@@ -19,6 +18,8 @@ plugins=(
 	zsh-autosuggestions
 	zsh-fzf-history-search
 )
+
+source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
