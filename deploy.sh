@@ -132,6 +132,10 @@ main() {
     download_ohmyposh_config
     install_neovim_plugins
     install_vscode_extensions
+
+    if [ "$OS" == "macos" ]; then
+        iterm_config
+    fi
     
     echo "Dotfiles installed successfully"
     echo "Restart your terminal or run 'exec zsh'"
