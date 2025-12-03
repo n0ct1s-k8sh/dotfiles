@@ -116,7 +116,7 @@ deploy_dotfiles() {
             exit 1
         fi
         mkdir -p "$HOME/Library/Application Support/Code/User"
-        cp .config/Code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+        cp .config/Code/User/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
     fi
 }
 
