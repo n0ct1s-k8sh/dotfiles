@@ -120,6 +120,11 @@ deploy_dotfiles() {
     fi
 }
 
+iterm_config() {
+    defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$PWD/iTerm"
+    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+}
+
 main() {
     echo "========================================="
     echo "  Dotfiles deployment"
