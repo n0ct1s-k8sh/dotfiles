@@ -1,0 +1,24 @@
+font-family = MesloLGM Nerd Font Mono
+font-size = 12
+
+theme = light:iTerm2-Light,dark:iTerm2-Dark
+
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor
+
+window-width = 80
+window-height = 25
+quit-after-last-window-closed = true
+confirm-close-surface = false
+
+bell-features = attention,title,border
+
+keybind = cmd+left=text:\x01
+keybind = cmd+right=text:\x05
+keybind = cmd+backspace=text:\x15
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+keybind = alt+backspace=text:\x1b\x7f
+keybind = delete=text:\x04
+keybind = alt+delete=esc:d

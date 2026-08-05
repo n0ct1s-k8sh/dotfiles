@@ -106,6 +106,9 @@ deploy_dotfiles() {
     mkdir -p "$HOME/.config"
     cp -r .config/nvim "$HOME/.config/nvim"
     
+    rm -rf "$HOME/.config/ghostty"
+    ln -s "$PWD/.config/ghostty" "$HOME/.config/ghostty"
+    
     if [ "$OS" == "linux" ]; then
         mkdir -p "$HOME/.config/Code/User"
         cp .config/Code/User/settings.json "$HOME/.config/Code/User/settings.json"
@@ -118,11 +121,6 @@ deploy_dotfiles() {
         mkdir -p "$HOME/Library/Application Support/Code/User"
         cp .config/Code/User/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
     fi
-}
-
-iterm_config() {
-    defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$PWD/iTerm"
-    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 }
 
 main() {
@@ -138,10 +136,6 @@ main() {
     install_neovim_plugins
     install_vscode_extensions
 
-    if [ "$OS" == "macos" ]; then
-        iterm_config
-    fi
-    
     echo "Dotfiles installed successfully"
     echo "Restart your terminal or run 'exec zsh'"
 }
